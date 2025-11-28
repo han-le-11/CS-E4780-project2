@@ -2,14 +2,68 @@
 # File: workflow.py
 # Description: None
 
+from ast import dump
+import json
 import os
-from typing import Any, Union
+import time
+from typing import Any, Tuple, Union
 
 import dspy
 import kuzu
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from pydantic import Field
+from tqdm import tqdm
+
+
+# === Timer ===
+class StatTracker(object):
+    def __init__(self):
+        self._stats = []
+        self._tag = "default"
+
+    def set_tag(self, tag: str):
+        self._tag = tag
+
+    def timeit(self, name: str, **kwargs):
+        class TimerContext(object):
+            def __enter__(inner_self):
+                inner_self.start = time.perf_counter()
+                return inner_self
+
+            def __exit__(inner_self, type, value, traceback):
+                end_timestamp = time.perf_counter()
+                duration = end_timestamp - inner_self.start
+                stat_entry = {
+                    "name": name,
+                    "tag": self._tag,
+                    "duration": duration,
+                    "start_timestamp": inner_self.start,
+                    "end_timestamp": end_timestamp,
+                }
+                stat_entry["info"] = kwargs
+                self._stats.append(stat_entry)
+
+        return TimerContext()
+
+    def get_all_stats(self):
+        return self._stats
+
+    def clear_all_stats(self):
+        self._stats = []
+
+
+def dump_stats(path: str, stats):
+    with open(path, "w") as f:
+        for stat in tqdm(stats):
+            f.write(f"{json.dumps(stat)}\n")
+
+
+_TRACKER = StatTracker()
+
+
+def timeit(name: str, **kwargs):
+    return _TRACKER.timeit(name, **kwargs)
 
 
 class Query(BaseModel):
@@ -192,30 +246,34 @@ class GraphRAG(dspy.Module):
         """
         Run a query synchronously on the database.
         """
-        result = self.get_cypher_query(question=question, input_schema=input_schema)
-        query = result.query
-        try:
-            # Run the query on the database
-            result = db_manager.conn.execute(query)
-            results = [item for row in result for item in row]
-        except RuntimeError as e:
-            print(f"Error running query: {e}")
-            results = None
+        with timeit("graph_rag_get_cypher_query"):
+            result = self.get_cypher_query(question=question, input_schema=input_schema)
+            query = result.query
+        with timeit("graph_rag_execute_query"):
+            try:
+                # Run the query on the database
+                result = db_manager.conn.execute(query)
+                results = [item for row in result for item in row]
+            except RuntimeError as e:
+                print(f"Error running query: {e}")
+                results = None
         return query, results
 
     def forward(self, db_manager: KuzuDatabaseManager, question: str, input_schema: str):
         final_query, final_context = self.run_query(db_manager, question, input_schema)
-        if final_context is None:
-            print("Empty results obtained from the graph database. Please retry with a different question.")
-            return {}
-        else:
-            answer = self.generate_answer(question=question, cypher_query=final_query, context=str(final_context))
-            response = {
-                "question": question,
-                "query": final_query,
-                "answer": answer,
-            }
-            return response
+
+        with timeit("graph_rag_generate_answer"):
+            if final_context is None:
+                print("Empty results obtained from the graph database. Please retry with a different question.")
+                return {}
+            else:
+                answer = self.generate_answer(question=question, cypher_query=final_query, context=str(final_context))
+                response = {
+                    "question": question,
+                    "query": final_query,
+                    "answer": answer,
+                }
+                return response
 
     async def aforward(self, db_manager: KuzuDatabaseManager, question: str, input_schema: str):
         final_query, final_context = self.run_query(db_manager, question, input_schema)
@@ -277,3 +335,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    dump_stats("graph_rag_stats.jsonl", _TRACKER.get_all_stats())
