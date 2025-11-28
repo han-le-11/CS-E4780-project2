@@ -1,4 +1,5 @@
 import marimo
+import re
 
 __generated_with = "0.14.17"
 app = marimo.App(width="medium")
@@ -10,7 +11,7 @@ def _(mo):
         rf"""
     # Graph RAG using Text2Cypher
 
-    This is a demo app in marimo that allows you to query the Nobel laureate graph (that's managed in Kuzu) using natural language. A language model takes in the question you enter, translates it to Cypher via a custom Text2Cypher pipeline in Kuzu that's powered by DSPy. The response retrieved from the graph database is then used as context to formulate the answer to the question.
+    This is a demo app in marimo that allows you to query the Nobel laureate graph (that's managed in Kuzu) using natural language. A language model takes in the question you enter, translates it [...]
 
     > \- Powered by Kuzu, DSPy and marimo \-
     """
@@ -20,7 +21,8 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    text_ui = mo.ui.text(value="Which scholars won prizes in Physics and were affiliated with University of Cambridge?", full_width=True)
+    text_ui = mo.ui.text(value="Which scholars won prizes in Physics and were affiliated with University of Cambridge?",
+                         full_width=True)
     return (text_ui,)
 
 
@@ -62,12 +64,13 @@ def _(GraphSchema, Query, dspy):
             - The nodes are the entities in the graph.
             - The edges are the relationships between the nodes.
             - Properties of nodes and edges are their attributes, which helps answer the question.
+
+        Your output should be a JSON object with a single key 'pruned_schema' containing the relevant schema.
         """
 
         question: str = dspy.InputField()
         input_schema: str = dspy.InputField()
         pruned_schema: GraphSchema = dspy.OutputField()
-
 
     class Text2Cypher(dspy.Signature):
         """
@@ -97,7 +100,6 @@ def _(GraphSchema, Query, dspy):
         input_schema: str = dspy.InputField()
         query: Query = dspy.OutputField()
 
-
     class AnswerQuestion(dspy.Signature):
         """
         - Use the provided question, the generated Cypher query and the context to answer the question.
@@ -109,18 +111,21 @@ def _(GraphSchema, Query, dspy):
         cypher_query: str = dspy.InputField()
         context: str = dspy.InputField()
         response: str = dspy.OutputField()
+
     return AnswerQuestion, PruneSchema, Text2Cypher
 
 
 @app.cell
-def _(BAMLAdapter, OPENROUTER_API_KEY, dspy):
+def _(OPENROUTER_API_KEY, dspy):
     # Using OpenRouter. Switch to another LLM provider as needed
     lm = dspy.LM(
-        model="openrouter/google/gemini-2.0-flash-001",
+        model="openrouter/google/gemini-2.0-flash-exp:free",
         api_base="https://openrouter.ai/api/v1",
         api_key=OPENROUTER_API_KEY,
     )
-    dspy.configure(lm=lm, adapter=BAMLAdapter())
+
+    # Configure only the Language Model. We will handle retrieval manually.
+    dspy.configure(lm=lm,)
     return
 
 
@@ -174,39 +179,40 @@ def _(BaseModel, Field):
     class Query(BaseModel):
         query: str = Field(description="Valid Cypher query with no newlines")
 
-
     class Property(BaseModel):
         name: str
         type: str = Field(description="Data type of the property")
-
 
     class Node(BaseModel):
         label: str
         properties: list[Property] | None
 
-
     class Edge(BaseModel):
         label: str = Field(description="Relationship label")
-        from_: Node = Field(alias="from", description="Source node label")
-        to: Node = Field(alias="from", description="Target node label")
+        from_: str = Field(alias="from", description="Source node label")
+        to: str = Field(alias="to", description="Target node label")
         properties: list[Property] | None
-
 
     class GraphSchema(BaseModel):
         nodes: list[Node]
         edges: list[Edge]
+
     return GraphSchema, Query
 
 
 @app.cell
 def _(
-    AnswerQuestion,
-    Any,
-    KuzuDatabaseManager,
-    PruneSchema,
-    Query,
-    Text2Cypher,
-    dspy,
+        AnswerQuestion,
+        Any,
+        KuzuDatabaseManager,
+        PruneSchema,
+        Query,
+        SentenceTransformer,
+        Text2Cypher,
+        dspy,
+        exemplars,
+        re,
+        util,
 ):
     class GraphRAG(dspy.Module):
         """
@@ -214,26 +220,95 @@ def _(
         on the Kuzu database, to generate a natural language response.
         """
 
-        def __init__(self):
+        def __init__(self, k=2):
+            super().__init__()
             self.prune = dspy.Predict(PruneSchema)
+
+            # 1. Dynamic Few-shot Exemplar Selection (Manual Implementation)
+            self.k = k
+            self.retriever_model = SentenceTransformer('all-MiniLM-L6-v2')
+            self.trainset = exemplars
+
+            # Pre-encode the exemplar questions for efficiency
+            exemplar_questions = [ex["question"] for ex in self.trainset]
+            self.trainset_embeddings = self.retriever_model.encode(exemplar_questions, convert_to_tensor=True)
+
             self.text2cypher = dspy.ChainOfThought(Text2Cypher)
             self.generate_answer = dspy.ChainOfThought(AnswerQuestion)
 
+        def _get_retrieved_examples(self, question: str) -> list[dspy.Example]:
+            """Manually retrieve k-similar examples using sentence-transformers."""
+            question_embedding = self.retriever_model.encode(question, convert_to_tensor=True)
+
+            # Find the top_k most similar exemplar questions
+            hits = util.semantic_search(question_embedding, self.trainset_embeddings, top_k=self.k)
+
+            # Get the full exemplar data for the best hits
+            retrieved_examples_data = [self.trainset[hit['corpus_id']] for hit in hits[0]]
+
+            # Format as dspy.Example objects
+            return [dspy.Example(question=ex["question"], query=ex["query"]) for ex in retrieved_examples_data]
+
+        def _validate_and_repair_query(self, db_manager: KuzuDatabaseManager, query: str, max_retries: int = 2) -> str:
+            """
+            2. Self-refinement loop: generate -> validate (syntax check) -> repair.
+            Validates the query syntax using EXPLAIN. If it fails, it attempts to repair it.
+            """
+            for _ in range(max_retries):
+                try:
+                    db_manager.conn.execute(f"EXPLAIN {query}")
+                    return self._post_process_query(query)
+                except Exception as e:
+                    print(f"Query validation failed: {e}. Repairing...")
+                    # This is a simplified repair prompt. In a real scenario, you might have a dedicated RepairSignature.
+                    response = self.text2cypher(
+                        question=f"The previous query failed. Fix this query: {query}. Error: {e}",
+                        input_schema=""  # Schema might be needed for more complex repairs
+                    )
+                    query = response.query.query
+
+            # Fails after retries, return the last known query and let it fail in execution
+            return self._post_process_query(query)
+
+        def _post_process_query(self, query: str) -> str:
+            """
+            3. Rule-based post-processor.
+            Enforces lowercase comparisons for string properties.
+            """
+            # Enforce lowercase on string comparisons
+            query = re.sub(
+                r"(\w+\.name\s*CONTAINS)\s*'([^']*)'",
+                lambda m: f"lower({m.group(1)}) CONTAINS '{m.group(2).lower()}'",
+                query,
+                flags=re.IGNORECASE
+            )
+            return query
+
         def get_cypher_query(self, question: str, input_schema: str) -> Query:
+            # Retrieve similar examples for few-shot prompting
+            retrieved_examples = self._get_retrieved_examples(question)
+
             prune_result = self.prune(question=question, input_schema=input_schema)
             schema = prune_result.pruned_schema
-            text2cypher_result = self.text2cypher(question=question, input_schema=schema)
+
+            # Use retrieved examples in the prompt
+            with dspy.context(lm=dspy.settings.lm, examples=retrieved_examples):
+                text2cypher_result = self.text2cypher(question=question, input_schema=schema)
+
             cypher_query = text2cypher_result.query
             return cypher_query
 
         def run_query(
-            self, db_manager: KuzuDatabaseManager, question: str, input_schema: str
+                self, db_manager: KuzuDatabaseManager, question: str, input_schema: str
         ) -> tuple[str, list[Any] | None]:
             """
             Run a query synchronously on the database.
             """
             result = self.get_cypher_query(question=question, input_schema=input_schema)
-            query = result.query
+
+            # Validate, repair, and post-process the query
+            query = self._validate_and_repair_query(db_manager, result.query)
+
             try:
                 # Run the query on the database
                 result = db_manager.conn.execute(query)
@@ -275,7 +350,6 @@ def _(
                 }
                 return response
 
-
     def run_graph_rag(questions: list[str], db_manager: KuzuDatabaseManager) -> list[Any]:
         schema = str(db_manager.get_schema_dict)
         rag = GraphRAG()
@@ -307,6 +381,10 @@ def _():
     from dspy.adapters.baml_adapter import BAMLAdapter
     from pydantic import BaseModel, Field
 
+    # New imports
+    from exemplars import exemplars
+    from sentence_transformers import SentenceTransformer, util
+
     load_dotenv()
 
     OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
@@ -316,9 +394,14 @@ def _():
         BaseModel,
         Field,
         OPENROUTER_API_KEY,
+        SentenceTransformer,
+        Text2Cypher,
         dspy,
+        exemplars,
         kuzu,
         mo,
+        re,
+        util,
     )
 
 
