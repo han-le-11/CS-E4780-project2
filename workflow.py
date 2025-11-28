@@ -349,9 +349,9 @@ def create_LM():
 
 def main():
     questions = [
-        "Which scholars won prizes in Physics and were affiliated with University of Cambridge?",
-        # "List the Nobel laureates in Chemistry from USA.",
-        # "Who are the Nobel Prize winners in Literature born before 1900?",
+        #"Which scholars won prizes in Physics and were affiliated with University of Cambridge?",
+        #"List the Nobel laureates in Chemistry from USA.",
+        "Who are the Nobel Prize winners in Chemistry affiliated with University of Oxford?",
     ]
     create_LM()
 
