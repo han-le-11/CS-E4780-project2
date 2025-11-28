@@ -1,0 +1,20 @@
+Retrieve laureates with interdisciplinary contributions.
+Identify researchers who predicted phenomena later confirmed experimentally by laureates.
+Find laureates who won for economic growth modeling.
+List laureates with multiple institutional affiliations at the time of award.
+Retrieve award motivations containing the word “fundamental.”
+Identify laureates whose research became foundations of modern cryptography.
+Find all laureates who were imprisoned at some point.
+List laureates recognized for human rights activism.
+Retrieve laureates who participated in major international scientific collaborations.
+Identify laureates who made discoveries using particle accelerators.
+Retrieve laureates with interdisciplinary contributions.
+Identify researchers who predicted phenomena later confirmed experimentally by laureates.
+Find laureates who won for economic growth modeling.
+List laureates with multiple institutional affiliations at the time of award.
+Retrieve award motivations containing the word “fundamental.”
+Identify laureates whose research became foundations of modern cryptography.
+Find all laureates who were imprisoned at some point.
+List laureates recognized for human rights activism.
+Retrieve laureates who participated in major international scientific collaborations.
+Identify laureates who made discoveries using particle accelerators.

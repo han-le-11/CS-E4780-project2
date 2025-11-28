@@ -1,4 +1,7 @@
 Which scholars won prizes in Physics and were affiliated with University of Cambridge?
+How many Physics laureates were born in the United States but later affiliated with the University of Cambridge? 
+Who were the mentors of female Chemistry laureates?
+Which laureates were mentored by other laureates outside of U.S. institutions?
 List all Nobel laureates in Physics.
 Find all laureates who won a Nobel Prize after the year 2000.
 Retrieve laureates who won the Nobel Prize more than once.

@@ -1,0 +1,150 @@
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.04702862499107141, "start_timestamp": 68696.821845458, "end_timestamp": 68696.868874083, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.006310334007139318, "start_timestamp": 68696.868896666, "end_timestamp": 68696.875207, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.005515165990800597, "start_timestamp": 68696.875220625, "end_timestamp": 68696.880735791, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0014595840038964525, "start_timestamp": 68696.880747291, "end_timestamp": 68696.882206875, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007652920030523092, "start_timestamp": 68696.882222583, "end_timestamp": 68696.882987875, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.024111916005495004, "start_timestamp": 68696.88310025, "end_timestamp": 68696.907212166, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0026714169944170862, "start_timestamp": 68696.907231291, "end_timestamp": 68696.909902708, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.005945208002231084, "start_timestamp": 68696.90991575, "end_timestamp": 68696.915860958, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.00416324999241624, "start_timestamp": 68696.915879791, "end_timestamp": 68696.920043041, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007742500019958243, "start_timestamp": 68696.920057916, "end_timestamp": 68696.920832166, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.02407437498914078, "start_timestamp": 68696.920950458, "end_timestamp": 68696.945024833, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0025840419984888285, "start_timestamp": 68696.945044291, "end_timestamp": 68696.947628333, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0019829579978249967, "start_timestamp": 68696.9476405, "end_timestamp": 68696.949623458, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 2.8000009479001164e-05, "start_timestamp": 68696.94963675, "end_timestamp": 68696.94966475, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 5.08299854118377e-06, "start_timestamp": 68696.949671958, "end_timestamp": 68696.949677041, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.020437583996681497, "start_timestamp": 68696.949949291, "end_timestamp": 68696.970386875, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.003922541000065394, "start_timestamp": 68696.970412125, "end_timestamp": 68696.974334666, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.00683062500320375, "start_timestamp": 68696.974347625, "end_timestamp": 68696.98117825, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0002612079988466576, "start_timestamp": 68696.981194625, "end_timestamp": 68696.981455833, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 2.3330067051574588e-06, "start_timestamp": 68696.981466, "end_timestamp": 68696.981468333, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.022889750005560927, "start_timestamp": 68696.981604291, "end_timestamp": 68697.004494041, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0022963339870329946, "start_timestamp": 68697.004513916, "end_timestamp": 68697.00681025, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000526249990798533, "start_timestamp": 68697.006823, "end_timestamp": 68697.00734925, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007821670005796477, "start_timestamp": 68697.007359916, "end_timestamp": 68697.008142083, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0012044580071233213, "start_timestamp": 68697.008157708, "end_timestamp": 68697.009362166, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.009473665995756164, "start_timestamp": 68697.009537125, "end_timestamp": 68697.019010791, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0024491670046700165, "start_timestamp": 68697.019025666, "end_timestamp": 68697.021474833, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0009505000052740797, "start_timestamp": 68697.021487083, "end_timestamp": 68697.022437583, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0006812909996369854, "start_timestamp": 68697.022450875, "end_timestamp": 68697.023132166, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007817500008968636, "start_timestamp": 68697.023141416, "end_timestamp": 68697.023923166, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.02401658300368581, "start_timestamp": 68697.02404625, "end_timestamp": 68697.048062833, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0024945839977590367, "start_timestamp": 68697.048088041, "end_timestamp": 68697.050582625, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0010074999881908298, "start_timestamp": 68697.050602083, "end_timestamp": 68697.051609583, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0011163330054841936, "start_timestamp": 68697.051626958, "end_timestamp": 68697.052743291, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.7431527500011725, "start_timestamp": 68697.052757666, "end_timestamp": 68697.795910416, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.015337415999965742, "start_timestamp": 68697.796835, "end_timestamp": 68697.812172416, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.004794292006408796, "start_timestamp": 68697.812210083, "end_timestamp": 68697.817004375, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0026179169944953173, "start_timestamp": 68697.817037333, "end_timestamp": 68697.81965525, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007499159983126447, "start_timestamp": 68697.819676375, "end_timestamp": 68697.820426291, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0017330419941572472, "start_timestamp": 68697.820461083, "end_timestamp": 68697.822194125, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.03497379100008402, "start_timestamp": 68697.82241025, "end_timestamp": 68697.857384041, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.002732124994508922, "start_timestamp": 68697.857408708, "end_timestamp": 68697.860140833, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000515209001605399, "start_timestamp": 68697.860156791, "end_timestamp": 68697.860672, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0005001660028938204, "start_timestamp": 68697.860696625, "end_timestamp": 68697.861196791, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0011693749984260648, "start_timestamp": 68697.861214791, "end_timestamp": 68697.862384166, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.029075791011564434, "start_timestamp": 68697.862540875, "end_timestamp": 68697.891616666, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0032112909975694492, "start_timestamp": 68697.891640375, "end_timestamp": 68697.894851666, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000772458006395027, "start_timestamp": 68697.894868333, "end_timestamp": 68697.895640791, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0009563749918015674, "start_timestamp": 68697.895655333, "end_timestamp": 68697.896611708, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0009462500020163134, "start_timestamp": 68697.896630666, "end_timestamp": 68697.897576916, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.025275416002841666, "start_timestamp": 68697.897848625, "end_timestamp": 68697.923124041, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.002862540990463458, "start_timestamp": 68697.9231505, "end_timestamp": 68697.926013041, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0005183750035939738, "start_timestamp": 68697.926029791, "end_timestamp": 68697.926548166, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007347080099862069, "start_timestamp": 68697.92656575, "end_timestamp": 68697.927300458, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0010215420043095946, "start_timestamp": 68697.927315291, "end_timestamp": 68697.928336833, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007795917001203634, "start_timestamp": 68697.928465166, "end_timestamp": 68697.936261083, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0026457089988980442, "start_timestamp": 68697.936279666, "end_timestamp": 68697.938925375, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0005842090031364933, "start_timestamp": 68697.938938416, "end_timestamp": 68697.939522625, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0006702920072712004, "start_timestamp": 68697.939539416, "end_timestamp": 68697.940209708, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000821291992906481, "start_timestamp": 68697.940223041, "end_timestamp": 68697.941044333, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.026055750000523403, "start_timestamp": 68697.9411605, "end_timestamp": 68697.96721625, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.002481292001903057, "start_timestamp": 68697.967238458, "end_timestamp": 68697.96971975, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007061670039547607, "start_timestamp": 68697.969735208, "end_timestamp": 68697.970441375, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.001388958000461571, "start_timestamp": 68697.970456833, "end_timestamp": 68697.971845791, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0008197080023819581, "start_timestamp": 68697.971860875, "end_timestamp": 68697.972680583, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007730792000074871, "start_timestamp": 68697.972796291, "end_timestamp": 68697.980527083, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0024250419955933467, "start_timestamp": 68697.980546541, "end_timestamp": 68697.982971583, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0011066250008298084, "start_timestamp": 68697.98298425, "end_timestamp": 68697.984090875, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0013472499995259568, "start_timestamp": 68697.984106625, "end_timestamp": 68697.985453875, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 8.096419916997547, "start_timestamp": 68697.985479541, "end_timestamp": 68706.081899458, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.042962749997968785, "start_timestamp": 68706.082748666, "end_timestamp": 68706.125711416, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.003061374998651445, "start_timestamp": 68706.125735708, "end_timestamp": 68706.128797083, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0017261670000152662, "start_timestamp": 68706.128816333, "end_timestamp": 68706.1305425, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000788874996942468, "start_timestamp": 68706.13055775, "end_timestamp": 68706.131346625, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0009179589978884906, "start_timestamp": 68706.131364291, "end_timestamp": 68706.13228225, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007700415997533128, "start_timestamp": 68706.132431125, "end_timestamp": 68706.140131541, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.002722749995882623, "start_timestamp": 68706.140149166, "end_timestamp": 68706.142871916, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0008403329993598163, "start_timestamp": 68706.142886583, "end_timestamp": 68706.143726916, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0012723749969154596, "start_timestamp": 68706.143742208, "end_timestamp": 68706.145014583, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.001411833000020124, "start_timestamp": 68706.145040125, "end_timestamp": 68706.146451958, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.008110833005048335, "start_timestamp": 68706.146606083, "end_timestamp": 68706.154716916, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0026373750006314367, "start_timestamp": 68706.154734333, "end_timestamp": 68706.157371708, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0021097919961903244, "start_timestamp": 68706.157386416, "end_timestamp": 68706.159496208, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.458299033809453e-05, "start_timestamp": 68706.159510583, "end_timestamp": 68706.159545166, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 2.2500025806948543e-06, "start_timestamp": 68706.159555333, "end_timestamp": 68706.159557583, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007153292011935264, "start_timestamp": 68706.159691916, "end_timestamp": 68706.166845208, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0024874579976312816, "start_timestamp": 68706.16686275, "end_timestamp": 68706.169350208, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0008376670011784881, "start_timestamp": 68706.169364791, "end_timestamp": 68706.170202458, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0010119590006070212, "start_timestamp": 68706.170215416, "end_timestamp": 68706.171227375, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 5.7327206670015585, "start_timestamp": 68706.171239458, "end_timestamp": 68711.903960125, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.049628667009528726, "start_timestamp": 68711.905241041, "end_timestamp": 68711.954869708, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.003045375007786788, "start_timestamp": 68711.95489375, "end_timestamp": 68711.957939125, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007798330043442547, "start_timestamp": 68711.957956125, "end_timestamp": 68711.958735958, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0006230419967323542, "start_timestamp": 68711.958754541, "end_timestamp": 68711.959377583, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0009762499976204708, "start_timestamp": 68711.959394875, "end_timestamp": 68711.960371125, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007599916003528051, "start_timestamp": 68711.960529, "end_timestamp": 68711.968128916, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.00415558299573604, "start_timestamp": 68711.968147, "end_timestamp": 68711.972302583, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0006130419933469966, "start_timestamp": 68711.972317541, "end_timestamp": 68711.972930583, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.00040495798748452216, "start_timestamp": 68711.972948958, "end_timestamp": 68711.973353916, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000820041008410044, "start_timestamp": 68711.973368875, "end_timestamp": 68711.974188916, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.02600574999814853, "start_timestamp": 68711.974325, "end_timestamp": 68712.00033075, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 6.471688833000371, "start_timestamp": 68712.000352708, "end_timestamp": 68718.472041541, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0038783750060247257, "start_timestamp": 68718.472122625, "end_timestamp": 68718.476001, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0022552919981535524, "start_timestamp": 68718.476052166, "end_timestamp": 68718.478307458, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 1.38285133401223, "start_timestamp": 68718.478343791, "end_timestamp": 68719.861195125, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.03738304199941922, "start_timestamp": 68719.861715708, "end_timestamp": 68719.89909875, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.1764974999969127, "start_timestamp": 68719.899122125, "end_timestamp": 68723.075619625, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.000995124995824881, "start_timestamp": 68723.0756485, "end_timestamp": 68723.076643625, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0011165839969180524, "start_timestamp": 68723.076664291, "end_timestamp": 68723.077780875, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.5662158329942031, "start_timestamp": 68723.077798333, "end_timestamp": 68723.644014166, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.04620125000656117, "start_timestamp": 68723.645010125, "end_timestamp": 68723.691211375, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.167342667002231, "start_timestamp": 68723.691241958, "end_timestamp": 68726.858584625, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 13.163324374996591, "start_timestamp": 68726.858658375, "end_timestamp": 68740.02198275, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0007791249954607338, "start_timestamp": 68740.022017333, "end_timestamp": 68740.022796458, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 6.6250067902728915e-06, "start_timestamp": 68740.022830166, "end_timestamp": 68740.022836791, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.04112358299607877, "start_timestamp": 68740.02351, "end_timestamp": 68740.064633583, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.6127892500080634, "start_timestamp": 68740.064658166, "end_timestamp": 68743.677447416, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.00167012499878183, "start_timestamp": 68743.677521708, "end_timestamp": 68743.679191833, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0015521659952355549, "start_timestamp": 68743.67924225, "end_timestamp": 68743.680794416, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 4.315761624995503, "start_timestamp": 68743.680849291, "end_timestamp": 68747.996610916, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.05140837500221096, "start_timestamp": 68747.997828625, "end_timestamp": 68748.049237, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 1.7684416659903945, "start_timestamp": 68748.0492625, "end_timestamp": 68749.817704166, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.007156458988902159, "start_timestamp": 68749.817782166, "end_timestamp": 68749.824938625, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 7.233300129882991e-05, "start_timestamp": 68749.824977958, "end_timestamp": 68749.825050291, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 4.916990292258561e-06, "start_timestamp": 68749.825072416, "end_timestamp": 68749.825077333, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.041821207996690646, "start_timestamp": 68749.825790083, "end_timestamp": 68749.867611291, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 2.339151500011212, "start_timestamp": 68749.867635166, "end_timestamp": 68752.206786666, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.001992125005926937, "start_timestamp": 68752.206865041, "end_timestamp": 68752.208857166, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0016350829973816872, "start_timestamp": 68752.208905875, "end_timestamp": 68752.210540958, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.5683820409904001, "start_timestamp": 68752.210607375, "end_timestamp": 68752.778989416, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.048338250009692274, "start_timestamp": 68752.780212791, "end_timestamp": 68752.828551041, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.9522877909912495, "start_timestamp": 68752.828576625, "end_timestamp": 68756.780864416, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0013112500018905848, "start_timestamp": 68756.780902958, "end_timestamp": 68756.782214208, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0011808330018538982, "start_timestamp": 68756.782245458, "end_timestamp": 68756.783426291, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.8082671250012936, "start_timestamp": 68756.783448833, "end_timestamp": 68757.591715958, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.045318917007534765, "start_timestamp": 68757.592670791, "end_timestamp": 68757.637989708, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 1.8911652090027928, "start_timestamp": 68757.638017041, "end_timestamp": 68759.52918225, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.006593583995709196, "start_timestamp": 68759.529261666, "end_timestamp": 68759.53585525, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 7.070800347719342e-05, "start_timestamp": 68759.53589625, "end_timestamp": 68759.535966958, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 4.6670029405504465e-06, "start_timestamp": 68759.535987583, "end_timestamp": 68759.53599225, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.04299354199611116, "start_timestamp": 68759.536795333, "end_timestamp": 68759.579788875, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 4.3582145830005175, "start_timestamp": 68759.579812875, "end_timestamp": 68763.938027458, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.004188874998362735, "start_timestamp": 68763.938121041, "end_timestamp": 68763.942309916, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.003461125001194887, "start_timestamp": 68763.942359166, "end_timestamp": 68763.945820291, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 1.175062499998603, "start_timestamp": 68763.945848083, "end_timestamp": 68765.120910583, "info": {}}
+{"name": "Exemplars Retrieval", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.04916379100177437, "start_timestamp": 68765.12215775, "end_timestamp": 68765.171321541, "info": {}}
+{"name": "Text2Cypher", "tag": "BigGraphRAG", "num_samples": 30, "duration": 3.1873848749964964, "start_timestamp": 68765.171347083, "end_timestamp": 68768.358731958, "info": {}}
+{"name": "Self-Refinement", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.0023715419956715778, "start_timestamp": 68768.358807583, "end_timestamp": 68768.361179125, "info": {}}
+{"name": "Query Execution", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.001040499992086552, "start_timestamp": 68768.361231, "end_timestamp": 68768.3622715, "info": {}}
+{"name": "Answer Generation", "tag": "BigGraphRAG", "num_samples": 30, "duration": 0.8367369170009624, "start_timestamp": 68768.362331083, "end_timestamp": 68769.199068, "info": {}}
