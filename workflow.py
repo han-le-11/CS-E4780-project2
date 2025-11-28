@@ -2,6 +2,7 @@
 # File: workflow.py
 # Description: Enhanced workflow for GraphRAG with dynamic examples and self-refinement.
 
+from ast import dump
 import json
 import os
 import re
@@ -217,7 +218,7 @@ class GraphRAG(dspy.Module):
 
         # Dynamic few-shot exemplar selection
         self.k = k
-        self.retriever_model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.retriever_model = SentenceTransformer('all-MiniLM-L6-v2')
         self.trainset = exemplars
         exemplar_questions = [ex["question"] for ex in self.trainset]
         self.trainset_embeddings = self.retriever_model.encode(exemplar_questions, convert_to_tensor=True)
@@ -225,11 +226,12 @@ class GraphRAG(dspy.Module):
         self.text2cypher = dspy.ChainOfThought(Text2Cypher)
         self.generate_answer = dspy.ChainOfThought(AnswerQuestion)
 
+
     def _get_retrieved_examples(self, question: str) -> list[dspy.Example]:
         """Manually retrieve k-similar examples using sentence-transformers."""
         question_embedding = self.retriever_model.encode(question, convert_to_tensor=True)
         hits = util.semantic_search(question_embedding, self.trainset_embeddings, top_k=self.k)
-        retrieved_data = [self.trainset[hit["corpus_id"]] for hit in hits[0]]
+        retrieved_data = [self.trainset[hit['corpus_id']] for hit in hits[0]]
         return [dspy.Example(question=ex["question"], query=ex["query"]) for ex in retrieved_data]
 
     def _validate_and_repair_query(self, db_manager: KuzuDatabaseManager, query: str, max_retries: int = 2) -> str:
@@ -245,7 +247,7 @@ class GraphRAG(dspy.Module):
                 print(f"Query validation failed on attempt {i + 1}: {e}. Repairing...")
                 response = self.text2cypher(
                     question=f"The previous query failed. Fix this query: {query}. Error: {e}",
-                    input_schema="",  # Schema might not be needed for simple repairs
+                    input_schema=""  # Schema might not be needed for simple repairs
                 )
                 query = response.query.query
 
@@ -261,33 +263,30 @@ class GraphRAG(dspy.Module):
             r"(\w+\.name\s*CONTAINS)\s*'([^']*)'",
             lambda m: f"lower({m.group(1)}) CONTAINS '{m.group(2).lower()}'",
             query,
-            flags=re.IGNORECASE,
+            flags=re.IGNORECASE
         )
         return query
 
     @lru_cache(maxsize=128)
     def get_cypher_query(self, question: str, input_schema: str) -> Query:
         # Step 1: Dynamically select few-shot exemplars
-        with timeit("Exemplars Retrieval"):
-            retrieved_examples = self._get_retrieved_examples(question)
+        retrieved_examples = self._get_retrieved_examples(question)
 
         # Step 2: Prune the schema
+        prune_result = self.prune(question=question, input_schema=input_schema)
+        schema_as_str = str(prune_result.pruned_schema.model_dump())
 
-        with timeit("Text2Cypher"):
-            prune_result = self.prune(question=question, input_schema=input_schema)
-            schema_as_str = str(prune_result.pruned_schema.model_dump())
-
-            # Step 3: Generate the Cypher query with dynamic examples
-            with dspy.context(lm=dspy.settings.lm, examples=retrieved_examples):
-                text2cypher_result = self.text2cypher(question=question, input_schema=schema_as_str)
+        # Step 3: Generate the Cypher query with dynamic examples
+        with dspy.context(lm=dspy.settings.lm, examples=retrieved_examples):
+            text2cypher_result = self.text2cypher(question=question, input_schema=schema_as_str)
 
         return text2cypher_result.query
 
     def run_query(
-        self,
-        db_manager: KuzuDatabaseManager,
-        question: str,
-        input_schema: str,
+            self,
+            db_manager: KuzuDatabaseManager,
+            question: str,
+            input_schema: str,
     ) -> tuple[str, list[Any] | None]:
         """
         Run a query synchronously on the database, including validation and repair.
@@ -322,3 +321,52 @@ class GraphRAG(dspy.Module):
                     "answer": answer,
                 }
                 return response
+
+
+def run_graph_rag(questions: list[str], db_manager: KuzuDatabaseManager) -> list[Any]:
+    schema = str(db_manager.get_schema_dict)
+    rag = GraphRAG()
+    # Run pipeline
+    results = []
+    for question in questions:
+        response = rag(db_manager=db_manager, question=question, input_schema=schema)
+        results.append(response)
+    return results
+
+
+def create_LM():
+    load_dotenv()
+
+    OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+    API_BASE_URL = "https://openrouter.ai/api/v1"
+    MODEL = "openrouter/google/gemini-2.5-flash"
+
+    # Using OpenRouter. Switch to another LLM provider as needed
+    lm = dspy.LM(
+        model=MODEL,
+        api_base=API_BASE_URL,
+        api_key=OPENROUTER_API_KEY,
+        max_retries=5,
+        delay=2,
+    )
+    dspy.configure(lm=lm)
+    return lm
+
+
+def main():
+    questions = [
+        #"Which scholars won prizes in Physics and were affiliated with University of Cambridge?",
+        #"List the Nobel laureates in Chemistry from USA.",
+        "Who are the Nobel Prize winners in Chemistry affiliated with University of Oxford?",
+    ]
+    create_LM()
+
+    db_manager = KuzuDatabaseManager("nobel.kuzu")
+    results = run_graph_rag(questions, db_manager)
+    for res in results:
+        print(res)
+
+
+if __name__ == "__main__":
+    main()
+    dump_stats("graph_rag_stats.jsonl", _TRACKER.get_all_stats())
