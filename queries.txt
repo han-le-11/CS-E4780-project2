@@ -1,0 +1,101 @@
+Which scholars won prizes in Physics and were affiliated with University of Cambridge?
+List all Nobel laureates in Physics.
+Find all laureates who won a Nobel Prize after the year 2000.
+Retrieve laureates who won the Nobel Prize more than once.
+Get all Nobel Prizes awarded in Chemistry between 1950 and 1970.
+Find all female Nobel laureates.
+List laureates born in the United States.
+Retrieve laureates associated with the University of Cambridge.
+Find Nobel laureates whose research involves quantum mechanics.
+Get the Nobel Prize categories and their total number of laureates.
+Find all Nobel laureates who were born in the same city.
+Retrieve laureates who won the Nobel Peace Prize as organizations.
+Get the birthplaces of all Economics laureates.
+Find laureates with collaborative publications between them.
+List Nobel prizes that were shared between three or more people.
+Identify laureates who declined the Nobel Prize.
+Retrieve Nobel lectures linked to laureates in Literature.
+Get all laureates who worked at MIT at the time of the award.
+Find laureates whose award motivation mentions “climate change.”
+Retrieve laureates who were under 40 when they received the prize.
+Find Nobel categories established after 1900.
+List laureates who later became heads of state.
+Find laureates who contributed to the discovery of DNA structure.
+Retrieve Nobel Peace Prize winners involved in humanitarian work.
+Identify laureates who collaborated with other laureates before winning.
+List all Nobel laureates born in Asian countries.
+Retrieve prize motivations for all Physics winners in the 1990s.
+Find laureates with affiliations in more than two countries.
+Identify laureates whose work influenced computer science.
+List organizations that have won the Nobel Peace Prize multiple times.
+Get all laureates who won for work related to vaccines.
+Retrieve award years with no Peace Prize given.
+Find laureates who won jointly for the same discovery.
+Get Nobel laureates who lived past age 95.
+Retrieve Nobel awards connected to breakthroughs in particle physics.
+Identify laureates who were refugees.
+List all Nobel Prize categories with their founding years.
+Find laureates who received awards for contributions to economics policy.
+Retrieve laureates who later founded research institutes.
+Identify family members who were both Nobel laureates.
+Find laureates whose award motivation includes “novel methodology.”
+List laureates whose primary field overlaps biology and chemistry.
+Retrieve Nobel literature laureates who wrote in non-European languages.
+Find the first laureate in each Nobel category.
+List all Nobel laureates grouped by decade.
+Retrieve all laureates associated with CERN.
+Identify laureates born in the same year.
+Find the cities that produced the most Nobel laureates.
+Retrieve laureates who held doctorates from the same university.
+List all Peace laureates associated with the United Nations.
+Find laureates who contributed to semiconductor research.
+Retrieve Literature laureates who were also translators.
+Identify Nobel winners who had siblings in academia.
+Find laureates affiliated with institutions in Scandinavia.
+Get all laureates who discovered antibiotics.
+Retrieve laureates whose work involved machine learning.
+Identify laureates whose award was controversial at the time.
+List all Nobel laureates who were members of national academies.
+Retrieve laureates who published influential textbooks.
+Find countries that have produced the most Nobel laureates.
+List universities with five or more Nobel laureate affiliates.
+Retrieve laureates who shared prizes across categories (e.g., two prizes in different fields).
+Find laureates with early career mentorship by other laureates.
+List Nobel prizes awarded for theoretical discoveries.
+Retrieve awards connected to solar energy research.
+Identify laureates with contributions to game theory.
+Find laureates who were poets and novelists.
+List Nobel laureates who contributed to general relativity research.
+Retrieve Peace Prize laureates focused on nuclear disarmament.
+Identify laureates born in colonial territories.
+Find laureates with major awards other than the Nobel Prize.
+List laureates whose award citation includes “pioneering work.”
+Retrieve laureates whose primary institution was in Germany.
+Identify laureates who discovered new subatomic particles.
+Find laureates who contributed to AI theory before 1990.
+List physicists who received the prize for condensed matter research.
+Retrieve laureates with Nobel lectures available online.
+Find laureates recognized for climate modeling.
+Identify laureates who won the prize posthumously.
+List laureates who were political dissidents.
+Retrieve laureates with contributions to catalysis chemistry.
+Identify laureates involved in global health initiatives.
+Find literature laureates known for science-fiction writing.
+Retrieve laureates whose discoveries influenced modern medicine.
+Find Nobel organizations based in Europe.
+List laureates who changed nationalities in their lifetime.
+Retrieve laureates with interdisciplinary contributions.
+Identify researchers who predicted phenomena later confirmed experimentally by laureates.
+Find laureates who won for economic growth modeling.
+List laureates with multiple institutional affiliations at the time of award.
+Retrieve award motivations containing the word “fundamental.”
+Identify laureates whose research became foundations of modern cryptography.
+Find all laureates who were imprisoned at some point.
+List laureates recognized for human rights activism.
+Retrieve laureates who participated in major international scientific collaborations.
+Identify laureates who made discoveries using particle accelerators.
+Find laureates with major breakthroughs before age 30.
+List laureates whose award citation references “discovery” vs “invention.”
+Retrieve laureates who won jointly with their PhD advisor.
+Identify Nobel prize-winning couples (married partners).
+Find laureates whose work directly enabled the development of modern computing.
