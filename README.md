@@ -2,6 +2,31 @@
 
 Source code for course project to build a Graph RAG with Kuzu, [DSPy](https://dspy.ai/) and [marimo](https://docs.marimo.io/) (open source, reactive notebooks for Python).
 
+## Project 2 Assignment
+
+### Setup
+
+Use the following command to install this repo:
+
+```bash
+pip install -e .
+```
+
+### Usage
+
+Examples are in `run.sh`. Use the following command to run the code.
+
+```bash
+bash run.sh
+```
+
+### Results Analysis
+
+All results are uploaded to main branch. See json files: `graph_rag_results_*.jsonl`.
+
+Visualization scripts are provided in `visualization.ipynb`.
+
+
 ## Setup
 
 We recommend using the `uv` package manager
